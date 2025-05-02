@@ -8,9 +8,13 @@ import adoptioncenter.model.Pet;
 public class Shelter<T extends Pet> {
 
 	private List<T> pets;
+	
+	public Shelter() {
+		this.pets = new ArrayList<>();
+	}
 
 	public Shelter(List<T> pets) {
-		setPets(new ArrayList<>());
+		this.pets = pets;
 	}//end Shelter
 
 	public List<T> getPets() {
@@ -26,5 +30,9 @@ public class Shelter<T extends Pet> {
 			System.out.println(pet);
 		}//end for
 	}//end printPets
+	
+	public void addPet(T pet) {
+		this.getPets().add(pet);
+	}
 	
 }//end Shelter
